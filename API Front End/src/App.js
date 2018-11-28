@@ -31,7 +31,7 @@ export default class App extends Component {
       });
   }
 
-  validateForm() {
+  validateForm = () => {
     var fName = document.forms["theForm"]["txtFName"];
     var lName = document.forms["theForm"]["txtLName"]
     var reC = (/^[a-zA-Z]+$/);
@@ -47,7 +47,7 @@ export default class App extends Component {
     }
   }
 
-  addPerson() {
+  addPerson = () => {
     if (this.validateForm() === true) {
       this.createAccount();
     }
