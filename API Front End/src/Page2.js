@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import { checkWinnerURL, makeAccountSuccessString } from './const.jsx';
+import { checkWinnerURL, makeAccountSuccessString , yourAccountNumber, EnterDraw} from './const.jsx';
 
 import Page3a from './page3a';
 import Page3b from './page3b';
@@ -26,7 +26,7 @@ export default class Page2 extends Component {
                 <h1>{makeAccountSuccessString}</h1> <br/>
                 <h2>{yourAccountNumber}</h2> <br/>
                 <h1>{this.props.account}</h1>
-                <button className="btn btn-success" onClick={this.checkPrize} >Enter Draw</button>
+                <button className="btn btn-success" onClick={this.checkPrize} >{EnterDraw}</button>
             </div>
         );
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
 
-import { makeAccountURL } from './const.jsx';
+import { makeAccountURL, Header, FirstName, LastName, Submit} from './const.jsx';
 
 import Page2 from './page2';
 import Axios from 'axios';
@@ -17,14 +17,12 @@ export default class App extends Component {
       }
   }
   createAccount = (event) => {
-    event.preventDefault();
-    var account =
-    {
+    Axios.post(makeAccountURL, {
       firstName: document.getElementById('txtFName').value,
-      lastName: document.getElementById('txtLName').value
-    };
-    Axios.post(makeAccountURL, { account })
+      lastName : document.getElementById('txtLName').value
+    })
       .then((response) => {
+        console.log(response.data);
         this.setState({
           accountNumber: response.data.accountNumber
         });
@@ -35,16 +33,15 @@ export default class App extends Component {
   render() {
     return (
       <div className="App" id="page2">
-        <h1>Account Creation</h1>
-        <h3> Please enter your details </h3>
+        <h3>{Header}</h3>
         <br />
-        First Name: <br />
+        {FirstName}<br />
         <input type="text" id="txtFName"></input>
         <br /><br />
-        Last Name: <br />
+        {LastName}<br />
         <input type="text" id="txtLName"></input>
         <br /><br />
-        <button className="btn btn-success" onClick={this.createAccount} >Submit</button>
+        <button className="btn btn-success" onClick={this.createAccount} >{Submit}</button>
       </div>
     );
   }

@@ -8,3 +8,9 @@ const enterPrizeString = "Would you like to enter our prize draw with a change t
 const prizeAmount = "£50"
 export const prizeString = enterPrizeString + prizeAmount;
 export const currency = " pounds."
+
+export const Header = "Create a new account:"
+export const Submit = "Submit"
+export const FirstName = "First name:"
+export const LastName = "Surname"
+export const EnterDraw = "Enter Draw"
