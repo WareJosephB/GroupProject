@@ -60,12 +60,14 @@ export default class App extends Component {
         <br />
         <form name="theForm">
           {FirstName}
+          <br />
           <input id="txtFName" type="text"
-            placeholder="First Name" />
-            <br/>
+          placeholder="ForeName" />
+          <br />
           {LastName}
+          <br />
           <input id="txtLName" type="text"
-            placeholder="Last Name" />
+            placeholder="Surname" />
         </form>
         <button className="btn btn-success" onClick={this.addPerson} >{Submit}</button>
       </div>
