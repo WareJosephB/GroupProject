@@ -1,6 +1,8 @@
 package com.gareth.persistence.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -13,6 +15,7 @@ public class Account {
 	private String firstName;
 	private String lastName;
 	private String accountNumber;
+	@OneToOne(cascade=CascadeType.ALL)
 	private Prize prize;
 
 	public Account() {

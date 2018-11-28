@@ -1,7 +1,15 @@
 package com.gareth.persistence.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Prize {
 
+	@Id
+	@GeneratedValue
+	private long prizeId;
 	private String message;
 	private boolean winner;
 

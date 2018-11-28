@@ -35,9 +35,8 @@ public class AccountEndpoint {
 	private String offerURL;
 
 	@GetMapping("${URL.method.processOffer}")
-	public Prize send(@PathVariable Account account) {
-		Prize thisPrize = restTemplate.getForObject(offerURL + account.getAccountNumber(), Prize.class);
-		account.setPrize(thisPrize);
+	public Prize send(@PathVariable String accountNumber) {
+		Prize thisPrize = restTemplate.getForObject(offerURL + accountNumber, Prize.class);
 		return thisPrize;
 	}
 
@@ -60,6 +59,7 @@ public class AccountEndpoint {
 	public Account addAccount(@RequestBody Account account) {
 		String ticket = restTemplate.getForObject(accountURL, String.class);
 		account.setAccountNumber(ticket);
+		account.setPrize(send(account.getAccountNumber()));
 		return service.add(account);
 	}
 
