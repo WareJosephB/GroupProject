@@ -4,7 +4,7 @@ export default class Page3b extends Component {
   render() {
     return (
       <div>
-        <p>{this.props.message}.</p>
+        <h2>{this.props.message}.</h2>
       </div>
     );
   }

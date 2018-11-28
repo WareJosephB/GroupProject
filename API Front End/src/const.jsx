@@ -11,6 +11,6 @@ export const currency = " pounds."
 
 export const Header = "Create a new account:"
 export const Submit = "Submit"
-export const FirstName = "First name:"
-export const LastName = "Surname"
+export const FirstName = "Forename:"
+export const LastName = "Surname:"
 export const EnterDraw = "Enter Draw"

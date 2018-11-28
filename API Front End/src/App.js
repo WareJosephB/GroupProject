@@ -35,12 +35,14 @@ export default class App extends Component {
       <div className="App" id="page2">
         <h3>{Header}</h3>
         <br />
+        <form>
         {FirstName}<br />
-        <input type="text" id="txtFName"></input>
+        <input type="text" id="txtFName" required='true'></input>
         <br /><br />
         {LastName}<br />
-        <input type="text" id="txtLName"></input>
+        <input type="text" id="txtLName" Required></input>
         <br /><br />
+        </form>
         <button className="btn btn-success" onClick={this.createAccount} >{Submit}</button>
       </div>
     );

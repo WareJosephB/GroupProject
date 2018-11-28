@@ -13,6 +13,7 @@ public class Account {
 	private String firstName;
 	private String lastName;
 	private String accountNumber;
+	private Prize prize;
 
 	public Account() {
 
@@ -44,6 +45,14 @@ public class Account {
 
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
+	}
+
+	public Prize getPrize() {
+		return prize;
+	}
+
+	public void setPrize(Prize prize) {
+		this.prize = prize;
 	}
 
 }
