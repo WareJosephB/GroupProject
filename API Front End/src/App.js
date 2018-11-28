@@ -62,6 +62,7 @@ export default class App extends Component {
           {FirstName}
           <input id="txtFName" type="text"
             placeholder="First Name" />
+            <br/>
           {LastName}
           <input id="txtLName" type="text"
             placeholder="Last Name" />
