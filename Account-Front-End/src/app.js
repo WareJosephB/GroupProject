@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
 
-import { makeAccountURL, Header, FirstName, LastName, Submit } from './const.jsx';
+import { makeAccountURL, Header, FirstName, LastName, Submit, EnterMessage } from './const.jsx';
 
 import Page2 from './page2';
 import Axios from 'axios';
@@ -27,7 +27,7 @@ export default class App extends Component {
         this.setState({
           accountNumber: response.data.accountNumber
         });
-        ReactDOM.render(<Page2 account={this.state.accountNumber} />, document.getElementById('page2'));
+        ReactDOM.render(<Page2 account={this.state.accountNumber}  />, document.getElementById('page2'));
       });
   }
 
@@ -57,18 +57,20 @@ export default class App extends Component {
     return (
       <div className="App" id="page2">
         <h3>{Header}</h3>
+        <h5>{EnterMessage}</h5>
         <br />
         <form name="theForm">
           {FirstName}
           <br />
           <input id="txtFName" type="text"
-          placeholder="ForeName" />
+          placeholder="Forename" />
           <br />
           {LastName}
           <br />
           <input id="txtLName" type="text"
             placeholder="Surname" />
         </form>
+        <br />
         <button className="btn btn-success" onClick={this.addPerson} >{Submit}</button>
       </div>
     );

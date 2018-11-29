@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Loser } from './const';
 
 export default class Page3b extends Component {
   render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import { checkWinnerURL, makeAccountSuccessString , yourAccountNumber, EnterDraw} from './const.jsx';
+import { checkWinnerURL, makeAccountSuccessString , yourAccountNumber, EnterDraw, Loser, messageDetails} from './const.jsx';
 
 import Page3a from './page3a';
 import Page3b from './page3b';
@@ -16,7 +16,7 @@ export default class Page2 extends Component {
                 if (response.data.winner) {
                     ReactDOM.render(<Page3a message={response.data.prize} />, document.getElementById("page3"))
                 } else {
-                    ReactDOM.render(<Page3b message={response.data.prize} />, document.getElementById("page3"))
+                    ReactDOM.render(<Page3b message={Loser} />, document.getElementById("page3"))
                 }
             });
     }
