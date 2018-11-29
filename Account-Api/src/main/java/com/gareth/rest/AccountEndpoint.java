@@ -3,7 +3,6 @@ package com.gareth.rest;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,12 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
-
 import com.gareth.persistence.domain.Prize;
-import com.gareth.producer.Producer;
+import com.gareth.service.business.AccountService;
 import com.gareth.persistence.domain.Account;
-import com.gareth.service.AccountService;
 
 @CrossOrigin
 @RequestMapping("${URL.base}")
@@ -26,22 +22,10 @@ public class AccountEndpoint {
 
 	@Autowired
 	private AccountService service;
-	@Autowired
-	private RestTemplate restTemplate;
-
-	@Autowired
-	private Producer producer;
-
-	@Value("${URL.generator.base}" + "${URL.generator.method}")
-	private String accountURL;
-
-	@Value("${URL.prize.base}" + "${URL.prize.method}")
-	private String offerURL;
 
 	@GetMapping("${URL.method.processOffer}")
 	public Prize send(@PathVariable String accountNumber) {
-		Prize thisPrize = restTemplate.getForObject(offerURL + accountNumber, Prize.class);
-		return thisPrize;
+		return service.prizeCheck(accountNumber);
 	}
 
 	@GetMapping("${URL.method.getAllAccounts}")
@@ -61,10 +45,6 @@ public class AccountEndpoint {
 
 	@PostMapping("${URL.method.addAccount}")
 	public Account addAccount(@RequestBody Account account) {
-		String ticket = restTemplate.getForObject(accountURL, String.class);
-		account.setAccountNumber(ticket);
-		account.setPrize(send(account.getAccountNumber()));
-		producer.produce(account);
 		return service.add(account);
 	}
 

@@ -1,8 +1,9 @@
-package com.gareth.service;
+package com.gareth.service.business;
 
 import java.util.Optional;
 
 import com.gareth.persistence.domain.Account;
+import com.gareth.persistence.domain.Prize;
 
 public interface AccountService {
 
@@ -13,5 +14,7 @@ public interface AccountService {
 	Account add(Account account);
 
 	void delete(Long id);
+
+	Prize prizeCheck(String accountNumber);
 
 }
