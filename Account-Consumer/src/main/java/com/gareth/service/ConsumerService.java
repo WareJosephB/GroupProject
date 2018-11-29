@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.gareth.persistence.domain.PojoAccount;
+import com.gareth.persistence.domain.Accounts;
 import com.gareth.repository.ConsumerRepository;
 
 @Service
@@ -18,11 +18,11 @@ public class ConsumerService {
 		this.consumerRepo = persist;
 	}
 
-	public Iterable<PojoAccount> getAll() {
+	public Iterable<Accounts> getAll() {
 		return consumerRepo.findAll();
 	}
 
-	public PojoAccount add(PojoAccount account) {
+	public Accounts add(Accounts account) {
 		return consumerRepo.save(account);
 	}
 
@@ -30,7 +30,7 @@ public class ConsumerService {
 		consumerRepo.deleteById(id);
 	}
 
-	public Optional<PojoAccount> get(Long id) {
+	public Optional<Accounts> get(Long id) {
 		return consumerRepo.findById(id);
 	}
 

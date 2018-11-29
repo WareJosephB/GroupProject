@@ -3,20 +3,18 @@ package com.gareth.persistence.domain;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Account {
 
-	@Id
-	@GeneratedValue
-	private long accountId;
 	private String firstName;
 	private String lastName;
+	@Id
 	private String accountNumber;
 	@OneToOne(cascade = CascadeType.ALL)
 	private Prize prize;
+	
 
 	public Account() {
 
@@ -56,8 +54,8 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [accountId=" + accountId + ", firstName=" + firstName + ", lastName=" + lastName
-				+ ", accountNumber=" + accountNumber + ", prize=" + prize + "]";
+		return "Account [firstName=" + firstName + ", lastName=" + lastName + ", accountNumber=" + accountNumber
+				+ ", prize=" + prize + "]";
 	}
 
 }

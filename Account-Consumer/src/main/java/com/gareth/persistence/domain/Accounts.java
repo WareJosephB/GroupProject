@@ -3,15 +3,23 @@ package com.gareth.persistence.domain;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
-public class PojoAccount {
+public class Accounts {
 
 	@Id
 	public ObjectId _id;
 	private String account;
 	private String date;
 
-	public PojoAccount() {
+	public Accounts() {
 
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	public String getAccount() {
@@ -22,11 +30,6 @@ public class PojoAccount {
 		this.account = account;
 	}
 
-	@Override
-	public String toString() {
-		return "PojoAccount [account=" + account + ", date=" + date + "]";
-	}
-
 	public String get_id() {
 		return _id.toHexString();
 	}
@@ -35,4 +38,8 @@ public class PojoAccount {
 		this._id = _id;
 	}
 
+	@Override
+	public String toString() {
+		return "PojoAccount [account=" + account + ", date=" + date + "]";
+	}
 }
