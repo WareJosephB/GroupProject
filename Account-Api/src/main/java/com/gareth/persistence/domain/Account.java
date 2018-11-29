@@ -15,15 +15,11 @@ public class Account {
 	private String firstName;
 	private String lastName;
 	private String accountNumber;
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL)
 	private Prize prize;
 
 	public Account() {
 
-	}
-
-	public String toString() {
-		return this.firstName;
 	}
 
 	public String getFirstName() {
@@ -56,6 +52,12 @@ public class Account {
 
 	public void setPrize(Prize prize) {
 		this.prize = prize;
+	}
+
+	@Override
+	public String toString() {
+		return "Account [accountId=" + accountId + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", accountNumber=" + accountNumber + ", prize=" + prize + "]";
 	}
 
 }

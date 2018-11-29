@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.gareth.persistence.domain.Prize;
+import com.gareth.producer.Producer;
 import com.gareth.persistence.domain.Account;
 import com.gareth.service.AccountService;
 
@@ -27,6 +28,9 @@ public class AccountEndpoint {
 	private AccountService service;
 	@Autowired
 	private RestTemplate restTemplate;
+
+	@Autowired
+	private Producer producer;
 
 	@Value("${URL.generator.base}" + "${URL.generator.method}")
 	private String accountURL;
@@ -60,6 +64,7 @@ public class AccountEndpoint {
 		String ticket = restTemplate.getForObject(accountURL, String.class);
 		account.setAccountNumber(ticket);
 		account.setPrize(send(account.getAccountNumber()));
+		producer.produce(account);
 		return service.add(account);
 	}
 
