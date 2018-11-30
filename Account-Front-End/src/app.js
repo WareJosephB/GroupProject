@@ -18,6 +18,7 @@ export default class App extends Component {
   }
 
   createAccount = (event) => {
+    event.preventDefault();
     Axios.post(makeAccountURL, {
       firstName: document.getElementById('txtFName').value,
       lastName: document.getElementById('txtLName').value
