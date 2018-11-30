@@ -1,40 +1,40 @@
 version: '3'
 services:
-  Activemq:
+  activemq:
     container_name: ActiveMQ
     image: bobcrutchley/activemq
-  MongoDB:
+  mongodb:
     container_name: MongoDB
     image: mongo
-Account-Api:
+  account-api:
     container_name: Account-Api
     build:
       context: Account-Api
       args:
       - artifact_id=Account-Api
       - version=1.0.0
-Account-Number-Generator:
+  account-number-generator:
     container_name: Account-Number-Generator
     build:
       context: Account-Number-Generator
       args:
       - artifact_id=Account-Number-Generator
       - version=1.0.0
-Account-Prize-Generator:
+  account-prize-generator:
     container_name: Account-Prize-Generator
     build:
       context: Account-Prize-Generator
       args:
       - artifact_id=Account-Prize-Generator
       - version=1.0.0
-Account-Consumer:
+  account-consumer:
     container_name: Account-Consumer
     build:
       context: Account-Consumer
       args:
       - artifact_id=Account-Consumer
       - version=1.0.0
-Account-Front-End:
+  account-front-end:
     container_name: Account-Front-End
     build:
       context: Account-Front-End
