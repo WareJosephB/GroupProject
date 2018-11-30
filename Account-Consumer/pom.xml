@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.gareth</groupId>
-	<artifactId>Account-Consumer</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>account-consumer</artifactId>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>Account-Consumer</name>
+	<name>account-consumer</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
