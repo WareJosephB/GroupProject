@@ -11,37 +11,37 @@ services:
   account-api:
     container_name: account-api
     build:
-      context: account-api
+      context: Account-Api
       args:
       - artifact_id=account-api
       - version=1.0.0
   account-number-generator:
     container_name: account-number-generator
     build:
-      context: account-number-generator
+      context: Account-Number-Generator
       args:
       - artifact_id=account-number-generator
       - version=1.0.0
   account-prize-generator:
     container_name: account-prize-generator
     build:
-      context: account-prize-generator
+      context: Account-Prize-Generator
       args:
       - artifact_id=account-prize-generator
       - version=1.0.0
   account-consumer:
     container_name: account-consumer
     build:
-      context: account-consumer
+      context: Account-Consumer
       args:
       - artifact_id=account-consumer
       - version=1.0.0
   account-front-end:
     container_name: account-front-end
     build:
-      context: account-front-end
+      context: Account-Front-End
       args:
       - artifact_id=account-front-end
       - version=1.0.0
-    ports
-     - 80:3000
+    ports:
+    - 80:3000
