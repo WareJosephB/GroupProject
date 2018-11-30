@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Implementation-Title: account-number-generator
+Implementation-Title: account-prize-generator
 Implementation-Version: 1.0.0
 Built-By: Admin
 Implementation-Vendor-Id: com.gareth
-Build-Jdk: 1.8.0_191
+Build-Jdk: 1.8.0_144
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/account-number-generator
+ ot-starter-parent/account-prize-generator
 Created-By: Maven Integration for Eclipse
 

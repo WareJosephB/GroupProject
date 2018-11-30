@@ -6,7 +6,7 @@
 
 	<groupId>com.gareth</groupId>
 	<artifactId>account-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>account-api</name>

@@ -36,11 +36,11 @@ export default class App extends Component {
     var lName = document.forms["theForm"]["txtLName"]
     var reC = (/^[a-zA-Z]+$/);
     if (fName.value === "" || !(fName.value.match(reC))) {
-      window.alert("Enter Valid First Name")
+      document.getElementById('errorMessage').innerHTML = "Enter Valid First Name"
       return false;
     }
     if (lName.value === "" || !(lName.value.match(reC))) {
-      window.alert("Enter Valid Last Name")
+      document.getElementById('errorMessage').innerHTML = "Enter Valid Last Name"
       return false;
     } else {
       return true;
@@ -72,6 +72,7 @@ export default class App extends Component {
         </form>
         <br />
         <button className="btn btn-success" onClick={this.addPerson} >{Submit}</button>
+        <p id='errorMessage'></p>
       </div>
     );
   }
