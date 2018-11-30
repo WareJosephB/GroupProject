@@ -1,4 +1,4 @@
-const ApiURL = 'acount-api:8080/'
+const ApiURL = 'http://acount-api:8080/'
 export const makeAccountURL = ApiURL + 'accounts/addAccount'
 export const checkWinnerURL = ApiURL + 'accounts/processOffer/'
 
