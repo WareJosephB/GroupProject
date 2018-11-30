@@ -9,8 +9,8 @@ import Axios from 'axios';
 
 export default class Page2 extends Component {
 
-    checkPrize = () => {
-
+    checkPrize = (event) => {
+        event.preventDefault();
         Axios.get(checkWinnerURL + this.props.account)
             .then((response) => {
                 if (response.data.winner) {
